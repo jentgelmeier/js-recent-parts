@@ -1,0 +1,52 @@
+function data() {
+  return [1,2,3,4]
+}
+
+var tmp;
+var [
+  first,
+  [
+    second,
+    third
+  ] = [],
+  fourth
+] = tmp = data() || [];
+
+var x = 10;
+var y = 20;
+[y,x] = [x,y]
+
+function data2([
+  first = 10, 
+  second = 20, 
+  third = 30
+] = []) {
+
+}
+
+
+function data() {
+  return {a: 1, b: 2, c: 3, d: 4};
+}
+
+// var first, second
+
+// ({
+//   b: second,
+//   a: first = 42,
+// } = data() || {});
+
+var {
+  a,
+  b: {
+    c,
+    d
+  } = {}
+} = data() || {}
+
+function data3({
+  a,
+  b
+} = {}) {
+  //...
+}
